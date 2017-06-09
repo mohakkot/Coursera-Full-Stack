@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>HW2 - PART1</title>
+     <meta name="Color Guessing Game part 1" content= "Mohak Kothari">
+  </head>
+
+  <body onload="do_game()">
+    <script>
+		var color = ["Blue", "Cyan", "Gold", "Gray", "Green", "Magenta", "Orange", "Red", "White", "Yellow"];
+		var target_color;
+		var finished = false;
+		var guess_cnt = 0;
+		var guessed_color = "";
+		
+		function do_game() {
+			var rand_num = Math.random() * color.length;
+			var rand_int = Math.floor(rand_num);
+			target_color = color[rand_int];
+			alert("The Choosen Color is : " + target_color);
+			while(guessed_color.toLowerCase() != target_color.toLowerCase()) {
+				guessed_color = prompt("I am thinking about any one of the below colors: \n\nBlue, Cyan, Gold, Gray, Green, Magenta, Orange, Red, White and Yellow \n\nCan you guess about what color am I thinking?\n");
+				guess_cnt += 1;
+			}
+		}
+	</script>
+   </body>
+</html>	

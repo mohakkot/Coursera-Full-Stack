@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>HW2 - PART2</title>
+     <meta name="Color Guessing Game part 2" content= "Mohak Kothari">
+  </head>
+
+  <body onload="do_game()">
+    <script>
+		var color = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+		var target_color;
+		var finished = false;	
+		var guess_cnt = 0;
+		var guessed_color = "";
+		
+		function do_game() {
+			var rand_num = Math.random() * color.length;
+			var rand_int = Math.floor(rand_num);
+			target_color = color[rand_int];
+			alert("The Choosen Color is : " + target_color);
+			while(!finished) {
+				guessed_color = prompt("I am thinking about any one of the below colors: \n\nBlue, Cyan, Gold, Gray, Green, Magenta, Orange, Red, White and Yellow \n\nCan you guess about what color am I thinking?\n");
+				guess_cnt += 1;
+				finished = check_guess();
+			}
+		}
+		
+		function check_guess() {
+			if(color.indexOf(guessed_color.toLowerCase()) == -1) {
+				alert("Sorry, I donot recognize this color. \n\n Please select the color from the list mentioned. ");
+			}
+			else if(guessed_color.toLowerCase() < target_color.toLowerCase()) {
+				alert("Sorry, Your guess is incorrect. \n\nHInt: Your Guessed Color is alphabetically smaller than my color.");
+			}
+			else if(guessed_color.toLowerCase() > target_color.toLowerCase()) {
+				alert("Sorry, Your guess is incorrect. \n\nHint: Your Guessed Color is alphabetically greater than my color.");
+			}
+			else {
+				document.getElementsByTagName("body")[0].style.background = guessed_color.toLowerCase();
+				setTimeout(function(){alert("Congrats!!! \n\nYour guess was same as mine. \n\n It took you exactly : " + guess_cnt + " chances to guess it right.");}, 10);
+				return(true);
+			}
+		}
+	</script>
+   </body>
+</html>	
