@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HW1 - PART1</title>
+    <meta name="Coursera Dating Website part 1" content= "Mohak Kothari">
+  </head>
+  
+  <body>
+    
+    <h1>Please Enter Your Details For Our Dating Website</h1>
+    
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php"
+      enctype="multipart/form-data" method="post">
+      
+      <fieldset>
+        <legend>Your Face</legend>
+        
+        <label for="image"> Your Image :</label>
+        <input type="file" id='avatar' name="image" required><br>
+        
+        <label for="imgprev"> Image Preview : </label>
+        <img id="preview" name= "imgprev"><br>
+      </fieldset><br>
+      
+      <fieldset>
+        <legend>Your General Details</legend>
+        
+        <label for="name"> Name : </label>
+        <input type="text" name="name" required><br>
+        
+         <label for="gender"> Gender : </label>
+        <input type="radio"  name="gender"  value="Male" id='male' required><label for='male'> Male</label>
+        <input type="radio"  name="gender"  value="Female" id='female' required><label for='female'> Female</label><br>
+        
+    	<label for="age"> Age : </label>
+        <input type="number" name="age" required><br>
+        
+        <label for="dob"> Date of Birth : </label>
+        <input type="date" name="dob"><br>
+         
+        <label for="colour"> Favourite color : </label>
+        <input type="color" name="colour" ><br>
+        
+        <label for="cntry"> Which country : </label>
+        <select name="cntry">
+          <option value="None"></option>
+          <option value="Cnd">Canada</option>
+		  <option value="Chn">China</option>
+		  <option value="Eng">England</option>
+		  <option value="India">India</option>
+		  <option value="USA">United States Of America</option>
+        </select>
+      </fieldset><br>
+      
+      <fieldset>
+        <legend>Your Indicators</legend>
+        
+        <label for="hgt">Height : </label>
+        Short <input name="hgt" type="range" min='0' max='100' step='2' value='50%' >Tall<br>
+        
+        <label for="sal">Salary : </label>
+        Low <input name="sal" type="range" min='0' max='100' step='2' value='50%' >High<br>
+        </fieldset><br>
+      
+      <fieldset>
+        <legend>Your Contact Information</legend>
+        
+        <label for="email">Email : </label>
+        <input type="email" name="email" required><br>
+        
+        <label for="cell">Mobile : </label>
+        <input type="tel" name="cell"><br>
+        
+        <label for="add">Address : </label>
+        <textarea name="add"></textarea><br>
+        
+        <label for="method">Method To Contact You : </label>
+        <input type="checkbox" name="method" id='email'><label for='email'>Email</label>
+        <input type="checkbox" name="method" id='wapp'><label for='wapp'>Whatsapp</label>
+        <input type="checkbox" name="method" id='chat'><label for='chat'>In-app chat</label>
+      </fieldset><br>
+      <input type="submit" value="Submit">
+      
+      </form>
+    </body>
+</html>
+
+        
